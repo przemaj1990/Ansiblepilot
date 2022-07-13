@@ -1,0 +1,12 @@
+---
+- name: install ansible on Ubuntu
+  hosts: all
+  become: true
+  tasks:
+    - name: test connection
+      ansible.builtin.ping:
+
+    - name: ansible-base
+      apt:
+        name: ansible
+        state: present

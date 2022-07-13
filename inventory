@@ -5,3 +5,4 @@
 ansible_connection=ssh
 ansible_user=pm1990
 ansible_ssh_pass=Mugin1990
+ansible_sudo_pass=Mugin1990

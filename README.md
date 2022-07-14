@@ -14,3 +14,17 @@
     sudo add-apt-repository --yes --update ppa:ansible/ansible
     sudo apt remove ansible
     sudo apt install ansible-base
+
+# Edit multi-line text - Ansible module blockinfile
+    - ignore/practice
+
+# Ansible troubleshooting - Indentation error
+    - problem with tab or lack of it
+
+# Print text or variable during execution - Ansible module debug
+    - use -vv to print variable in verbose 
+    ansible-playbook -i inventory -vv 5_print_variable.yml
+
+# Install a package in RedHat-like systems - Ansible module yum
+
+    

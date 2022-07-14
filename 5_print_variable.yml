@@ -1,0 +1,24 @@
+---
+- name: debug module demo
+  hosts: all
+  become: true
+  vars:
+    - username: bob
+    - fruit: "apple"
+  tasks:
+  - name: debug message 1
+    debug: 
+      var: "{{ fruit }}"
+  - name: debug message 2
+    ansible.builtin.debug:
+      msg: "example text"
+  - name: debug message 3
+    ansible.builtin.debug:
+      msg: " I like {{ fruit }} too"
+  - name: debug message 4
+    ansible.builtin.debug:
+      var: fruit
+      verbosity: 2
+  - name: print facts
+    debug:
+      var: ansible_facts.devices.loop0

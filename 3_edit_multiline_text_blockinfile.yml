@@ -1,0 +1,21 @@
+---
+- name: install ansible on Ubuntu
+  hosts: all
+  become: true
+  tasks:
+    - name: test connection
+      ansible.builtin.ping:
+
+    - name: Generate /etc/hosts file2
+      ansible.builtin.blockinfile:
+        state: absent
+        dest: /etc/hosts
+        content: |
+                192.168.0.201 demo demo.example.com
+
+    - name: Generate /etc/hosts file3
+      ansible.builtin.blockinfile:
+        state: present
+        dest: /etc/hosts
+        content: |
+                192.168.0.200 demo demo.example.com

@@ -1,0 +1,11 @@
+---
+- name: copy module demo
+  hosts: dwt-ubuntu4
+  become: true
+  tasks:
+    - name: copy report.txt
+      ansible.builtin.copy:
+        src: /home/pm1990/Ansiblepilot/Ansiblepilot/test.txt
+        dest: /test.txt
+        owner: pm1990
+        mode: '0644'

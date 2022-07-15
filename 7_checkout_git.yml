@@ -11,4 +11,4 @@
     - name: checkout git repo
       ansible.builtin.git:
         repo: https://github.com/lucab85/ansible-pilot.git
-        dest: /home/devops/ansible-pilot
+        dest: /home/pm1990/Ansiblepilot/Ansiblepilot/ansible-pilot

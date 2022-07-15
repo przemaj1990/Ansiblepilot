@@ -26,5 +26,7 @@
     ansible-playbook -i inventory -vv 5_print_variable.yml
 
 # Install a package in RedHat-like systems - Ansible module yum
+# Install a package in Debian-like systems - Ansible module apt
+# Privilege escalation errors - Ansible troubleshooting 
 
-    
+# Checkout git repository via HTTPS - Ansible module git

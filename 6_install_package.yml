@@ -11,7 +11,11 @@
       apt:
         name: wget
         state: present
-    - name: install package dnf
-      dnf:
-        name: wget
+    # - name: install package dnf
+    #   dnf:
+    #     name: wget
+    #     state: present
+    - name: install package
+      apt:
+        name: curl
         state: present

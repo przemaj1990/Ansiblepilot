@@ -4,7 +4,8 @@
 [dwt-ubuntu4]
 10.0.85.140
 
-
+[centos]
+10.0.85.24
 
 [localhost:vars]
 ansible_connection=ssh
@@ -15,5 +16,11 @@ ansible_sudo_pass=Mugin1990
 [dwt-ubuntu4:vars]
 ansible_connection=ssh
 ansible_user=pm1990
+ansible_ssh_pass=Mugin1990
+ansible_sudo_pass=Mugin1990
+
+[centos:vars]
+ansible_connection=ssh
+ansible_user=root
 ansible_ssh_pass=Mugin1990
 ansible_sudo_pass=Mugin1990

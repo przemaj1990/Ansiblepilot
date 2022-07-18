@@ -1,0 +1,39 @@
+---
+- name: rolling update demo
+  hosts: centos
+  become: true
+
+  # pre_tasks:
+  #   - name: 'Prepare to run ansible tasks'
+  #     raw: dnf install -y python3-dnf langpacks-en glibc-all-langpacks epel-release
+
+  # For Centos/RedHat:
+  pre_tasks:
+  Base on: https://techglimpse.com/failed-metadata-repo-appstream-centos-8/
+    - name: First command
+      raw: sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+    - name: Second command
+      raw: sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+
+  tasks:
+    - name: ensure pkg updated
+      yum:
+        name: nginx
+        state: latest
+    - name: ensure system updated
+      yum:
+        name: "*"
+        state: latest
+        update_cache: true
+
+  # For Debian: 
+  # - name: ensure pkg updated
+  #   ansible.builtin.apt:
+  #     name: nginx
+  #     state: latest
+  #     update_cache: true
+  # - name: ensure system updated
+  #   ansible.builtin.apt:
+  #     name: "*"
+  #     state: latest
+  #     update_cache: true

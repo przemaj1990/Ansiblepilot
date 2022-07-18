@@ -1,6 +1,6 @@
 ---
 - name: git module demo
-  hosts: all
+  hosts: dwt-ubuntu4
   become: true
   tasks:
     - name: ensure git pkg installed
@@ -11,4 +11,4 @@
     - name: checkout git repo
       ansible.builtin.git:
         repo: https://github.com/lucab85/ansible-pilot.git
-        dest: /home/pm1990/Ansiblepilot/Ansiblepilot/ansible-pilot
+        dest: /home/pm1990/Ansiblepilot

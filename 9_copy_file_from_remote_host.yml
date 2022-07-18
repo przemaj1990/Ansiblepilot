@@ -1,0 +1,13 @@
+---
+- name: fetch module demo
+  hosts: dwt-ubuntu4
+  become: true
+  vars:
+    python_file: "/home/pm1990/test.py"
+    dump_dir: "Downloaded_by_ansible"
+  tasks:
+    - name: fetch log
+      ansible.builtin.fetch:
+        fail_on_missing: yes
+        src: "{{ python_file }}"
+        dest: "{{ dump_dir }}"

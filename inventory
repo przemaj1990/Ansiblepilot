@@ -7,6 +7,9 @@
 [centos]
 10.0.85.24
 
+[windows]
+10.0.139.100
+
 [localhost:vars]
 ansible_connection=ssh
 ansible_user=pm1990
@@ -19,7 +22,16 @@ ansible_user=pm1990
 ansible_ssh_pass=Mugin1990
 ansible_sudo_pass=Mugin1990
 
+[windows:vars]
+ansible_user=ddd
+ansible_password=Test1234!
+ansible_port=5985
+ansible_connection=winrm
+ansible_winrm_trasport=basic
+ansible_winrm_server_cert_validation=ignore
+
 [centos:vars]
+
 ansible_connection=ssh
 ansible_user=root
 ansible_ssh_pass=Mugin1990

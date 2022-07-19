@@ -28,5 +28,14 @@
 # Install a package in RedHat-like systems - Ansible module yum
 # Install a package in Debian-like systems - Ansible module apt
 # Privilege escalation errors - Ansible troubleshooting 
-
 # Checkout git repository via HTTPS - Ansible module git
+# Rolling Update Debian-like systems - Ansible module apt
+# Connection failed - Ansible troubleshooting
+# Copy files from remote hosts - Remote to Local - Ansible module fetch
+# Rolling Update RedHat like systems - Ansible module yum
+    - problem with mirror on CentOS:
+      solution:  https://techglimpse.com/failed-metadata-repo-appstream-centos-8/
+      
+# Edit single-line text -Ansible module lineinfile
+# Test Windows host availability - Ansible module win_ping
+

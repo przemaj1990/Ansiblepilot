@@ -9,7 +9,7 @@
 
   # For Centos/RedHat:
   pre_tasks:
-  Base on: https://techglimpse.com/failed-metadata-repo-appstream-centos-8/
+  # Base on: https://techglimpse.com/failed-metadata-repo-appstream-centos-8/
     - name: First command
       raw: sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
     - name: Second command

@@ -1,0 +1,20 @@
+---
+- name: firewalld module demo
+  hosts: centos
+  become: true
+  tasks:
+    - name: nginx installed
+      yum:
+        name: nginx
+        state: present
+    - name: firewalld rules
+      firewalld:
+        service: "{{ item }}"
+        state: enabled
+        permanent: true
+        immediate: true
+      loop:
+        - http
+        - https
+
+

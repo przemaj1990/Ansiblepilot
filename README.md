@@ -48,4 +48,8 @@
 # Delete file or directory - Ansible module file
 # Download a file - Ansible module get_url
 # Reboot remote hosts - Ansible module reboot
-
+# Create an empty file - Ansible module file
+# Checkout git repository via SSH - Ansible module git
+# Ansible troubleshooting - Syntax Error
+# Ansible troubleshooting - not a valid attribute for a Play error
+# Ansible troubleshooting - fatal template error while templating string

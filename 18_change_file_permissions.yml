@@ -1,0 +1,13 @@
+---
+- name: file module demo
+  hosts: centos
+  vars:
+    myfile: "/home/pm1990/test.txt"
+  become: false
+  tasks:
+    - name: check permission
+      ansible.builtin.file:
+        path: "{{ myfile }}"
+        owner: "pm1990"
+        group: "users"
+        mode: '0777'

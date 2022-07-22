@@ -1,0 +1,11 @@
+---
+- name: file module demo
+  hosts: centos
+  vars:
+    mypath: "/home/pm1990/test.txt"
+  become: false
+  tasks:
+    - name:  not present '{{mypath}}'
+      ansible.builtin.file:
+        path: "{{ mypath }}"
+        state: "absent"

@@ -38,4 +38,14 @@
       
 # Edit single-line text -Ansible module lineinfile
 # Test Windows host availability - Ansible module win_ping
+# Create user account - Ansible module user
+# Remove user account - Ansible module user
+# Ansible troubleshooting - failure downloading
+# Ansible troubleshooting - missing module parameter
+# Extract an archive - Ansible module unarchive
+# Open firewall ports in RedHat-like systems - Ansible module firewalld
+# Change file permission - Ansible module file
+# Delete file or directory - Ansible module file
+# Download a file - Ansible module get_url
+# Reboot remote hosts - Ansible module reboot
 

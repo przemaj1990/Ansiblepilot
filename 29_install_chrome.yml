@@ -1,0 +1,81 @@
+---
+- name: install Google Chrome on Ubuntu
+  hosts: dwt-ubuntu4
+  become: true
+  tasks:
+    - name: Install apt-transport-https
+      ansible.builtin.apt:
+        state: latest
+        update_cache: true
+    - name: Add Apt signing key
+      ansible.builtin.apt_key:
+        url: "https://dl.google.com/linux/linux_signing_key.pub"
+        state: present
+    - name: Add repository into sources list
+      ansible.builtin.apt_repository:
+        repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+        state: present
+        filename: google-chrome
+    - name: Install google-chrome-stable
+      ansible.builtin.apt:
+        name: "google-chrome-stable"
+        state: latest
+        update_cache: true
+
+# ---
+# - name: install Google Chrome on RedHat
+#   hosts: centos
+#   become: true
+#   tasks:
+#     - name: Add Yum signing key
+#       rpm_key:
+#         key: https://dl.google.com/linux/linux_signing_key.pub
+#         state: present
+# - name: Add repository into repo.d list
+#       yum_repository:
+#         name: google-chrome
+#         description: google-chrome repository
+#         baseurl: http://dl.google.com/linux/chrome/rpm/stable/x86_64
+#         enabled: true
+#         gpgcheck: true
+#         gpgkey: https://dl.google.com/linux/linux_signing_key.pub
+# - name: Install google-chrome-stable
+#       yum:
+#         name: "google-chrome-stable"
+#         state: latest 
+#         update_cache: true
+
+# ---
+# - name: install Google Chrome Suse
+#   hosts: all
+#   become: true
+#   tasks:
+#     - name: Add rpm signing key
+#       ansible.builtin.rpm_key:
+#         key: https://dl.google.com/linux/linux_signing_key.pub
+#         state: present
+# - name: Add repository into repo list
+#       community.general.zypper_repository:
+#         name: google-chrome
+#         description: google-chrome repository
+#         repo: http://dl.google.com/linux/chrome/rpm/stable/x86_64
+#         auto_import_keys: true
+#         state: present
+#         runrefresh: true
+#         enable: true
+# - name: Install google-chrome-stable
+#       community.general.zypper:
+#         name: "google-chrome-stable"
+#         state: latest
+#         update_cache: true
+
+# ---
+# - name: install Google Chrome Windows
+#   hosts: all
+#   become: false
+#   gather_facts: false
+#   tasks:
+#     - name: install packages
+#       chocolatey.chocolatey.win_chocolatey:
+#         name: "googlechrome"
+#         state: present

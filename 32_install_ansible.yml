@@ -1,0 +1,23 @@
+# How to install Ansible in CentOS 8
+
+#!/bin/bash
+sudo yum install epel-release
+sudo yum install ansible
+
+# How to install Ansible in CentOS 8 Stream
+
+#!/bin/bash
+$ sudo yum install epel-next-release
+$ sudo yum install ansible
+
+# How to install Ansible in Fedora 34
+
+#!/bin/bash
+$ sudo dnf list available ansible
+$ sudo dnf install ansible
+
+# How to install Ansible in Windows 10 WSL Windows Subsystem for Linux
+
+wsl --help
+wsl --list -o
+wsl --install

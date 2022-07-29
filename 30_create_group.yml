@@ -1,0 +1,11 @@
+---
+- name: group module demo
+  hosts: centos
+  become: true
+  vars:
+    mygroup: "example"
+  tasks:
+    - name: create group
+      ansible.builtin.group:
+        name: "{{ mygroup }}"
+        state: present

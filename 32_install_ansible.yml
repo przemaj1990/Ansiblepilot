@@ -21,3 +21,10 @@ $ sudo dnf install ansible
 wsl --help
 wsl --list -o
 wsl --install
+
+# How to install Ansible in Rocky Linux 8
+
+#!/bin/bash
+sudo dnf install epel-release
+sudo dnf install ansible
+ansible --version

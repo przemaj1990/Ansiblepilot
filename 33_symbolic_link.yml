@@ -1,0 +1,16 @@
+- name: file module demo
+  hosts: centos
+  become: true
+  vars:
+    mylink: "/tmp/example2.txt"
+    mysrc: "~/example.txt"
+  tasks:
+    - name: Creating an empty file
+      ansible.builtin.file:
+        path: "{{ mysrc }}"
+        state: touch
+    - name: Creating a symlink
+      ansible.builtin.file:
+        src: "{{ mysrc }}"
+        dest: "{{ mylink }}"
+        state: link

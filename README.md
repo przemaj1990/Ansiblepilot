@@ -53,3 +53,5 @@
 # Ansible troubleshooting - Syntax Error
 # Ansible troubleshooting - not a valid attribute for a Play error
 # Ansible troubleshooting - fatal template error while templating string
+...
+ansible-playbook -i inventory debug_missing_sudo.yml -bK <- to manually ask for password promtp to become root

@@ -10,6 +10,10 @@
 [windows]
 10.0.139.100
 
+[abc_masters]
+abc-master-0 ansible_ssh_user=administrator  ansible_host=192.168.160.101 ansible_port=22 abc_ip_address=192.168.160.101
+abc-master-1 ansible_ssh_user=administrator  ansible_host=192.168.160.102 ansible_port=22 abc_ip_address=192.168.160.102
+
 [localhost:vars]
 ansible_connection=ssh
 ansible_user=pm1990

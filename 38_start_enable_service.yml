@@ -1,0 +1,17 @@
+---
+- name: service module demo
+  hosts: dwt-ubuntu4, centos
+  become: true
+  vars:
+    services_on_boot:
+      - "chronyd.service"
+  tasks:
+    - name: populate service facts
+      ansible.builtin.service_facts:
+    - name: enable services on boot
+      ansible.builtin.service:
+        name: "{{ item }}"
+        enabled: true
+        state: started
+      when: "item in services"
+      with_items: '{{ services_on_boot }}'

@@ -28,3 +28,28 @@ wsl --install
 sudo dnf install epel-release
 sudo dnf install ansible
 ansible --version
+
+# How to install Ansible in Debian 11
+
+#!/bin/bash
+$ sudo apt-get update
+$ sudo apt-get install ansible
+$ sudo apt list –installed ansible
+
+# How to install Ansible in Amazon Linux 2 (AWS EC2)
+
+#!/bin/bash
+$ sudo yum update -y
+$ sudo amazon-linux-extras install ansible2 -y
+$ ansible --version
+
+# How to install Ansible in CentOS 9 Stream
+
+#!/bin/bash
+sudo dnf install ansible-core
+
+#  How to install Ansible in Ubuntu 21.10
+
+#!/bin/bash
+sudo apt update
+sudo apt install ansible

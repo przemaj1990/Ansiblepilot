@@ -1,0 +1,48 @@
+---
+- name: uri module demo
+  hosts: centos
+  become: false
+  vars:
+    server: "https://10.0.139.110"
+    get_account: "/api/system/accounts/6871946986405233743?page_size=20&sessionid="
+    get_session_id: "/api/system/login"
+  tasks:
+    
+    - name: authenticate
+      ansible.builtin.uri:
+        url: "{{ server }}{{ get_session_id }}"
+        method: POST
+        body_format: json
+        body: '{
+          "username": "admin",
+          "password": "proxycrypto"
+        }'
+        status_code: 200
+        timeout: 300
+        validate_certs: no
+      register: session_id
+
+    - name: debug1
+      ansible.builtin.debug:
+        var: session_id.json.sessionid | string
+
+    - name: debug2
+      set_fact:
+        session_id2: "{{ session_id.json.sessionid | string }}"
+
+    - name: debug3
+      ansible.builtin.debug:
+        var: session_id2
+    
+    - name: list account
+      ansible.builtin.uri:
+        url: "{{ server }}{{ get_account }}{{ session_id2 }}"
+        method: GET
+        status_code: 200
+        timeout: 300
+        validate_certs: no
+      register: result
+
+    - name: debug4
+      ansible.builtin.debug:
+        var: result.json.name

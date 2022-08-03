@@ -53,3 +53,22 @@ sudo dnf install ansible-core
 #!/bin/bash
 sudo apt update
 sudo apt install ansible
+
+# How to install Ansible in Ubuntu 21.10
+#!/bin/bash
+sudo apt update
+sudo apt install ansible
+
+# How to install Ansible in Fedora 35
+#!/bin/bash
+$ sudo dnf list available ansible
+$ sudo dnf install ansible
+$ sudo "rpm -qa | grep ansible"
+$ sudo dnf list ansible
+
+# How to install Ansible in Arch Linux 2021.12.01
+#!/bin/bash
+sudo pacman -Syu
+sudo pacman -Si ansible
+sudo pacman -S ansible
+sudo pacman -Q | grep ansible

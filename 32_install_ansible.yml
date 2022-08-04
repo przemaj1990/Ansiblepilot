@@ -72,3 +72,23 @@ sudo pacman -Syu
 sudo pacman -Si ansible
 sudo pacman -S ansible
 sudo pacman -Q | grep ansible
+
+# How to install Ansible in AlmaLinux 8
+#!/bin/bash
+sudo yum install epel-release
+sudo yum install ansible
+
+# How to install Ansible in SUSE Linux Enterprise Server (SLES) 15 SP3
+#!/bin/bash
+SUSEConnect --status
+SUSEConnect --list-extensions
+SUSEConnect -p PackageHub/15.3/x86_64
+zypper install ansible
+zypper info ansible
+ansible --version
+
+# How to install Ansible in Gentoo Linux
+#!/bin/bash
+$ sudo emerge --sync
+$ sudo emerge --ask app-admin/ansible
+$ sudo emerge -pv app-admin/ansible

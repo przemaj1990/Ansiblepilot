@@ -92,3 +92,8 @@ ansible --version
 $ sudo emerge --sync
 $ sudo emerge --ask app-admin/ansible
 $ sudo emerge -pv app-admin/ansible
+
+# How to install Ansible in Windows 11 WSL Windows Subsystem for Linux 
+wsl --help
+wsl --list -o
+wsl --install

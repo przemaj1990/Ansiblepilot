@@ -55,3 +55,21 @@
 # Ansible troubleshooting - fatal template error while templating string
 ...
 ansible-playbook -i inventory debug_missing_sudo.yml -bK <- to manually ask for password promtp to become root
+
+# Download and Use Ansible Galaxy Role:
+    - How to use ansible role inside playbook:
+        roles:
+        - role: lucab85.ansible_role_log4shell
+    - download role using predefined requirements.yml 
+        ansible-galaxy install -r requirements.yml with text inside:
+        roles:
+            - name: lucab85.ansible_role_log4shell
+    
+# Ansible terminology - ansible vs ansible-core packages
+    - ansible-core
+        Ansible Core is the command-line tool that is primarily for developers and users who want to install only the collections they need. 
+        It contains a minimal amount of modules and plugins and allows other Collections to be installed.
+        Contain main core of ansible without additional package/role ect. 2 release per years. 
+    - ansible community
+        The Ansible community package offers the functionality of Ansible 2.9, with 85+ collections containing thousands of modules and plugins.
+        Depends on ansible-core. 

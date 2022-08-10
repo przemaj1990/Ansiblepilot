@@ -1,0 +1,46 @@
+---
+- name: debug module demo
+  hosts: centos
+  vars:
+    variable1: |
+      exactly as you see
+      will appear these three
+      lines of poetry      
+    variable2: >
+      this is really a
+      single line of text
+      despite appearances      
+  tasks:
+    - name: print variable1
+      ansible.builtin.debug:
+        var: variable1
+    - name: print variable2
+      ansible.builtin.debug:
+        var: variable2
+
+# Ansible Break a string over multiple lines
+# “|” - Literal Block Scalar operator
+# “>” - Folded Block Scalar operator
+# Today we’re talking about Ansible Break a string over multiple lines: Basically, there are two different operators:
+
+# the “|” - Literal Block Scalar"
+# the “>” Folded Block Scalar"
+# It’s easy for me to show you the behavior by example.
+
+# Examples
+# variable1 code
+# variable1: |
+#  exactly as you see
+#  will appear these three
+#  lines of poetry 
+# variable1 output
+#  exactly as you see
+#  will appear these three
+#  lines of poetry\n
+# variable2 code
+# variable2: >
+#  this is really a
+#  single line of text
+#  despite appearances 
+# variable2 output
+# variable2: this is really a single line of text despite appearances\n

@@ -1,0 +1,19 @@
+---
+- name: extra variable demo
+  hosts: centos
+  become: true
+  vars:
+    fruit: banan
+
+  tasks:
+    - name: print message
+      ansible.builtin.debug:
+        msg: "fruit is {{ fruit }}"
+
+# ansible-playbook --extra-vars="fruit=apple" -i inventory 55_pass_variable.yml
+# ansible-playbook --extra-vars='{"fruit":"raspberry"}' -i inventory 55_pass_variable.yml
+# possible:
+# --extra-vars "fruit=apple"
+# --extra-vars '{"fruit":"apple"}'
+# --extra-vars "@file.json"
+# --extra-vars "@file.yml"

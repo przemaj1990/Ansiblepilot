@@ -97,3 +97,12 @@ $ sudo emerge -pv app-admin/ansible
 wsl --help
 wsl --list -o
 wsl --install
+
+# How to install Ansible in Oracle Linux 8
+#!/bin/bash
+sudo yum install oracle-epel-release-el8
+sudo yum install ansible
+
+How to install Ansible in RedHat Enterprise Linux (RHEL) 9 Beta
+#!/bin/bash
+sudo dnf install ansible-core
